@@ -9,20 +9,20 @@
  
 
 ## Background
-![HorseRacing](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/horseracing.jpg)
+![HDB Resale](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/horseracing.jpg)
 
-Horse racing has a long and distinguished history, practised in civilisations across the world since ancient times. The modern horse racing became well-established in the 18th century in Britian. It continued to grow in popularity till this day, and was one of the few sports that continued during the Covid-19 crisis in Australia and Hong Kong.
+From 2012 to 2021, Housing and Development Board (HDB) resale prices in Singapore experienced significant fluctuations due to various policy changes, market demand, and economic factors. In 2013, the Singapore government implemented several cooling measures, including the Total Debt Servicing Ratio (TDSR) framework and a reduction in the Mortgage Servicing Ratio (MSR) for HDB loans, which led to a decline in resale prices from 2014 to 2017. However, from 2018 onwards, the HDB resale market began to recover, driven by factors such as a stable economy and increased demand for public housing.
 
-Horse racing is the most important sport in Hong Kong. With only 24 trainers and a similar number of jockeys, participants are firmly in the spotlight. The regulation and governance of the horse racing industry comes under the supervision of the Hong Kong Jockey Club.
+By 2020, the COVID-19 pandemic had created unique pressures on the market, including delays in the construction of new Build-to-Order (BTO) flats, which drove more buyers to the resale market. Consequently, 2020 and 2021 saw a surge in HDB resale prices, with prices reaching record highs in some areas.
 
 ## Problem Statement
-Punters have access to information available on the HKJC website, with veterinary and trackwork record available at the click of a button. There are many factors that could affect the race result and millions have tried to find a winning formula in order to make a profit from betting. We did a simple test to see what would happen if we had bet $1 on every horse with the lowest odds. Theoretically, this should work since the horse with the lowest odds tends to be the favourite. Our results showed otherwise.
+Estate agents face several challenges in this dynamic market. These include accurately pricing properties in a fluctuating market, managing client expectations amid rising prices, and navigating the complexities of government regulations. Additionally, there is a growing trend for new homeowners to prioritise purchasing homes near top schools, further intensifying competition in certain areas, which adds another layer of complexity for agents trying to meet client demands.
 
 ![BetLowest](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/bet_lowest_odds.jpg)
 
 And so the problem we want to address here is: 
 
-**Can we use machine learning to make predictions to profit from horse races?**
+**Can we use machine learning to make predictions for resale prices?**
 
 We will follow the data science process to answer this problem.
 1. Define the problem
@@ -34,7 +34,7 @@ We will follow the data science process to answer this problem.
 
 --- 
 ## Data Sources
-The dataset contains the race result of 1561 local races throughout Hong Kong racing seasons 2014-17. They can be downloaded from Kaggle at [this link](https://www.kaggle.com/datasets/lantanacamara/hong-kong-horse-racing).
+The dataset contains HDB resale data from March 2012 to April 2021. The dataset contains 150,634 rows and 78 columns. The data can be downloaded from Google Drive at [this link](https://drive.google.com/file/d/1KnT9XkEfdUG2GSIzglD-0GyegZJ0WNSA/view?usp=sharing).
 
 The data dictionary will be provided at the bottom of this file.
 
@@ -42,22 +42,21 @@ The data dictionary will be provided at the bottom of this file.
 ## Executive Summary
 **INTRODUCTION**
 
-This project seeks to make predictions on the outcome of horse races through both classification and regression models. For classification models, we aim to predict the winner and top 3 positions of a race. For regression models, we aim to predict the finish time of the horses, hereby predicting the winner of the race.
+This project seeks to make predictions on the outcome of HDB resale prices through regression models. For regression models, we aim to predict the finish time of the horses, hereby predicting the winner of the race.
 
-With the prediction results, we will make bets using different strategies to profit from the horse race. Backtesting results of each model will also show the number of bets and profit made from each strategy.
+With the prediction results, agents will be able to use different strategies to meet their client's needs. Backtesting results of each model will also show the number of bets and profit made from each strategy.
 
 **METHODOLOGY**
 
 The work was done in 7 seperate notebooks.
 1. Preprocessing - Cleaning and tidying of data, Feature Engineering
 2. EDA - Data visualisation and analysis of key patterns
-3. Classification Modelling - Training dataset fitted on 4 models to get classfication predictions
-4. Regression Modelling - Testing dataset fitted on 4 models to get regression predictions
-5. Evaluation - Evaluation of results, Feature Importance, SHAP values
-6. Backtesting - Using betting strategy to answer the problem statement of whether we can profit from horse races
-7. Deployment - To build an application using Streamlit, where punters can key in simplified inputs to get a prediction on whether to bet on a horse.
+3. Regression Modelling - Testing dataset fitted on 3 models to get regression predictions
+5. Evaluation - Evaluation of results, Feature Importance
+6. Backtesting - Using test data to answer the problem statement of whether we can predict resale prices
+7. Deployment - To build an application using Streamlit, where agents can key in simplified inputs to get a prediction on the resale price.
 
-The application was deployed on Streamlit and can be accessed through this [link](https://ethan-horseraceprediction.streamlitapp.com/). A screenshot showing the app is shown below. Please note that this app was only intended as an educational and demo tool, and not meant to be used for real life betting.
+The application was deployed on Streamlit and can be accessed through this [link](TO BE INCLUDED). A screenshot showing the app is shown below. Please note that this app was only intended as an educational and demo tool, and not meant to be used for real life house planning.
 
 ![App](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/app.jpg)
 
