@@ -9,7 +9,7 @@
  
 
 ## Background
-![HDB Resale](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/horseracing.jpg)
+![HDB Resale]([https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/horseracing.jpg](https://unsplash.com/photos/blue-and-white-concrete-building-during-daytime-DZ5yS11N9CA))
 
 From 2012 to 2021, Housing and Development Board (HDB) resale prices in Singapore experienced significant fluctuations due to various policy changes, market demand, and economic factors. In 2013, the Singapore government implemented several cooling measures, including the Total Debt Servicing Ratio (TDSR) framework and a reduction in the Mortgage Servicing Ratio (MSR) for HDB loans, which led to a decline in resale prices from 2014 to 2017. However, from 2018 onwards, the HDB resale market began to recover, driven by factors such as a stable economy and increased demand for public housing.
 
