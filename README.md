@@ -64,9 +64,14 @@ The application was deployed on Streamlit and can be accessed through this [link
 
 **SIGNIFICANT FINDINGS**
 
-Classification models were evaluated on their F1, PR-AUC Score, Precision and Recall as the dataset is highly imbalanced when predicting the positive class of the top position. There is a tradeoff between precision and recall and in the case of making correct predictions, precision would be the more important consideration.
+After evaluating the 13 variables using PyCaret to identify the top models based on their train and test RMSE, we narrowed down our selection to three models: Light Gradient Boosting Machine, Extreme Gradient Boosting Machine and CatBoost.
 
-For regression models, the metric used was the root mean squared error (RMSE). Models were trained to generalized. With a regression prediction, finding the fastest horse from each race allowed us to obtain the accuracy (or precision) of predicting the top position and top 3 positions.
+RMSE (Root Mean Square Error) is a valuable metric for evaluating the quality of a regression model. It gives you insight into how well the model's predictions match the actual values. 
+
+We also consider another factor which is the time spent to run each model. Below is the table showing all RMSE and Run time
+
+
+
 
 ![Feature Importance](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/shap_features.jpg)
 
