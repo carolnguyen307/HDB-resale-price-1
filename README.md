@@ -63,14 +63,43 @@ The application was deployed on Streamlit and can be accessed through this [link
 
 **SIGNIFICANT FINDINGS**
 
-After evaluating the 13 variables using PyCaret to identify the top models based on their train and test RMSE, we narrowed down our selection to three models: Light Gradient Boosting Machine, Extreme Gradient Boosting Machine and CatBoost.
+Based on a context of structured tabular dataset, we managed to filter out the three strongest options for modeling which are Light Gradient Boosting Machine (LightGBM), CatBoost and Extreme Gradient Boosting Machine (XGBoost).
 
-RMSE (Root Mean Square Error) is a valuable metric for evaluating the quality of a regression model. It gives you insight into how well the model's predictions match the actual values. 
+We further analyzed performance of three machine learning models using metrics such as Train RMSE, Test RMSE, Train R², Test R² and Run Time (s). 
+Here’s the analysis:
 
-We also consider another factor which is the time spent to run each model. Below is the table showing all RMSE and Run time
+1. Light Gradient Boosting Machine
+Train RMSE: 23,594
+Test RMSE: 23,699
+Train R²: 0.97
+Test R²: 0.97
+Run Time: 50 seconds
+Analysis:The LightGBM model shows strong performance with a low RMSE (Root Mean Square Error) on both the training and test datasets, indicating good predictive accuracy.The R² (coefficient of determination) of 0.97 is high, signifying that the model explains 97% of the variance in the data.
+The run time of 50 seconds suggests that the model is relatively fast.
 
+2. CatBoost
+Train RMSE: 25,359
+Test RMSE: 25,130
+Train R²: 0.97
+Test R²: 0.97
+Run Time: 72 seconds
+Analysis:CatBoost also performs well, with slightly higher RMSE values compared to LightGBM. However, the difference is minimal, and the model still maintains high accuracy.The R² is consistent at 0.97, indicating that it explains 97% of the data’s variance, similar to LightGBM.
+The run time is 72 seconds, making it slower than LightGBM but still within a reasonable range.
 
+3. XGBoost
+Train RMSE: 22,924
+Test RMSE: 22,906
+Train R²: 0.97
+Test R²: 0.97
+Run Time: 38 seconds
+Analysis: XGBoost has the lowest RMSE among the three models, indicating the best predictive performance on both the training and test datasets.
+The R² is consistent at 0.97, similar to the other models, explaining 97% of the variance in the data.
+The run time is the fastest at 38 seconds, making XGBoost not only the most accurate but also the most efficient in terms of computational speed.
 
+Overall Summary
+LightGBM is a strong contender with very close performance metrics to XGBoost and a slightly longer run time.
+CatBoost is still a solid model, particularly when we have a lot of categorical data, but it lags slightly behind in terms of RMSE and run time.
+XGBoost outperforms the other two models in terms of both accuracy (lowest RMSE) and efficiency (shortest run time). It is our final model of choice since we prioritize predictive performance and computation time.
 
 ![Feature Importance](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/shap_features.jpg)
 
