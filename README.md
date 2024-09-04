@@ -103,60 +103,98 @@ XGBoost outperforms the other two models in terms of both accuracy (lowest RMSE)
 
 ![Feature Importance](https://github.com/ethan-eplee/HorseRacePrediction/blob/main/images/shap_features.jpg)
 
-The SHAP summary plot showed that lower values of a horse's recent ranks contributed to a higher probability of the horse finishing top. The quality of the jockey, as shown by his recent ranks, also play a big role in determinining if a horse will win.
-
-In the backtesting phase, we ran our model predictions through different strategies, and found that 7 out of 8 models actually returned a positive value. In the notebook, we ran a few strategies, but the simplest ones were:
-1. Bet $1 when model that predicted a horse will win the top position
-2. Bet $1 on the horse that model predicted with the fastest time during a race
-
-A summary of the backtesting results when ran on these two strategies are shown below.
-
-|                **Model** 	| **Money** 	| **Bets Made** 	|
-|-------------------------:	|----------:	|--------------:	|
-|               SMOTE + RF 	|     375.2 	|           743 	|
-| Random Forest Classifier 	|     268.1 	|            68 	|
-|      Logistic Regression 	|      23.0 	|            32 	|
-|     Gaussian Naive Bayes 	|      10.7 	|           177 	|
-|         Ridge Regression 	|     360.4 	|           480 	|
-|                     LGBM 	|     307.3 	|           617 	|
-|           KNN Regression 	|     237.6 	|           480 	|
-|  Random Forest Regressor 	|     -48.1 	|           542 	|
-
----
-
-
-
-
 ## Data Dictionary
 
-There are two datasets obtained from Kaggle, courtesy of the Hong Kong Jocket Club. The first is the related to the horse and the the second is related to the race. Both of these tables can be joined on the race_id column.
-
-| Columns               	| Description                                                                                                                                                                            	|
-|-----------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| finishing_position    	| The rank of the horse. (E.g. the horse with finishing_position 1 is the first to finish)                                                                                               	|
-| horse_number          	| The number for the horse in the specific race. (Note that the same horse may have different numbers in different races)                                                                	|
-| horse_name            	| English name of the horse                                                                                                                                                              	|
-| horse_id              	| ID of the horse. (The ID for a horse is unique in all the races)                                                                                                                       	|
-| jockey                	| The one who rides the horse in the race. (A jockey can ride different horses in the races)                                                                                             	|
-| trainer               	| The one who trains the horse. (Multiple horses from a trainer can appear in the same race)                                                                                             	|
-| actual_weight         	| The extra weight that a horse carries in the race. (The horses with better performances in the previous races will carry extra weights to make the race more competitive)              	|
-| declared_horse_weight 	| The weight of the horse on date of the race.                                                                                                                                           	|
-| draw                  	| The position of the horse at the starting point. The inner positions are usually advantageous and correspond to smaller draw numbers.                                                  	|
-| length_behind_winner  	| The length behind the winner at the finish line. The unit is “horse length”.                                                                                                           	|
-| running_position_i    	| The rank of the horse at the i-th timing point. (The running position will be “NA” if the total distance of the race is short and the horses do not cross the particular timing point) 	|
-| finish_time           	| The total time from the starting point to the finish line. The unit is in seconds.                                                                                                     	|
-| win_odds              	| The multiplier of the amount you bet to be received if you win. THe odds are usually determined automatically by the total money bet on each horse.                                    	|
-| race_id               	| The ID of the race for this entry. The race_id is consistent in the two data files.                                                                                                    	|
-| race_distance         	| The race distance in metres for each race                                                                                                                                              	|
+resale_price: the property's sale price in Singapore dollars. This is the target variable that you're trying to predict for this challenge.
+Tranc_YearMonth: year and month of the resale transaction, e.g. 2015-02.
+town: HDB township where the flat is located, e.g. BUKIT MERAH.
+flat_type: type of the resale flat unit, e.g. 3 ROOM.
+block: block number of the resale flat, e.g. 454.
+street_name: street name where the resale flat resides, e.g. TAMPINES ST 42.
+storey_range: floor level (range) of the resale flat unit, e.g. 07 TO 09.
+floor_area_sqm: floor area of the resale flat unit in square metres.
+flat_model: HDB model of the resale flat, e.g. Multi Generation.
+lease_commence_date: commencement year of the flat unit's 99-year lease.
+Tranc_Year: year of resale transaction.
+Tranc_Month: month of resale transaction.
+mid_storey: median value of storey_range.
+lower: lower value of storey_range.
+upper: upper value of storey_range.
+mid: middle value of storey_range.
+full_flat_type: combination of flat_type and flat_model.
+address: combination of block and street_name.
+floor_area_sqft: floor area of the resale flat unit in square feet.
+hdb_age: number of years from lease_commence_date to present year.
+max_floor_lvl: highest floor of the resale flat.
+year_completed: year which construction was completed for resale flat.
+residential: boolean value if resale flat has residential units in the same block.
+commercial: boolean value if resale flat has commercial units in the same block.
+market_hawker: boolean value if resale flat has a market or hawker centre in the same block.
+multistorey_carpark: boolean value if resale flat has a multistorey carpark in the same block.
+precinct_pavilion: boolean value if resale flat has a pavilion in the same block.
+total_dwelling_units: total number of residential dwelling units in the resale flat.
+1room_sold: number of 1-room residential units in the resale flat.
+2room_sold: number of 2-room residential units in the resale flat.
+3room_sold: number of 3-room residential units in the resale flat.
+4room_sold: number of 4-room residential units in the resale flat.
+5room_sold: number of 5-room residential units in the resale flat.
+exec_sold: number of executive type residential units in the resale flat block.
+multigen_sold: number of multi-generational type residential units in the resale flat block.
+studio_apartment_sold: number of studio apartment type residential units in the resale flat block.
+1room_rental: number of 1-room rental residential units in the resale flat block.
+2room_rental: number of 2-room rental residential units in the resale flat block.
+3room_rental: number of 3-room rental residential units in the resale flat block.
+other_room_rental: number of "other" type rental residential units in the resale flat block.
+postal: postal code of the resale flat block.
+Latitude: Latitude based on postal code.
+Longitude: Longitude based on postal code.
+planning_area: Government planning area that the flat is located.
+Mall_Nearest_Distance: distance (in metres) to the nearest mall.
+Mall_Within_500m: number of malls within 500 metres.
+Mall_Within_1km: number of malls within 1 kilometre.
+Mall_Within_2km: number of malls within 2 kilometres.
+Hawker_Nearest_Distance: distance (in metres) to the nearest hawker centre.
+Hawker_Within_500m: number of hawker centres within 500 metres.
+Hawker_Within_1km: number of hawker centres within 1 kilometre.
+Hawker_Within_2km: number of hawker centres within 2 kilometres.
+hawker_food_stalls: number of hawker food stalls in the nearest hawker centre.
+hawker_market_stalls: number of hawker and market stalls in the nearest hawker centre.
+mrt_nearest_distance: distance (in metres) to the nearest MRT station.
+mrt_name: name of the nearest MRT station.
+bus_interchange: boolean value if the nearest MRT station is also a bus interchange.
+mrt_interchange: boolean value if the nearest MRT station is a train interchange station.
+mrt_latitude: latitude (in decimal degrees) of the nearest MRT station.
+mrt_longitude: longitude (in decimal degrees) of the nearest MRT station.
+bus_stop_nearest_distance: distance (in metres) to the nearest bus stop.
+bus_stop_name: name of the nearest bus stop.
+bus_stop_latitude: latitude (in decimal degrees) of the nearest bus stop.
+bus_stop_longitude: longitude (in decimal degrees) of the nearest bus stop.
+pri_sch_nearest_distance: distance (in metres) to the nearest primary school.
+pri_sch_name: name of the nearest primary school.
+vacancy: number of vacancies in the nearest primary school.
+pri_sch_affiliation: boolean value if the nearest primary school has a secondary school affiliation.
+pri_sch_latitude: latitude (in decimal degrees) of the nearest primary school.
+pri_sch_longitude: longitude (in decimal degrees) of the nearest primary school.
+sec_sch_nearest_dist: distance (in metres) to the nearest secondary school.
+sec_sch_name: name of the nearest secondary school.
+cutoff_point: PSLE cutoff point of the nearest secondary school.
+affiliation: boolean value if the nearest secondary school has a primary school affiliation.
+sec_sch_latitude: latitude (in decimal degrees) of the nearest secondary school.
+sec_sch_longitude: longitude (in decimal degrees) of the nearest secondary school.
 
 ---
-## Recommendations 
-- Backtesting results were good, but I cannot be sure if they are reflective of real life horse racing.
-- One of the drawbacks of the backtesting is that the races were all treated as if on the same starting ground. In reality, results from a race would have to be updated into the model, for retraining, to predict the results of the next race. Due to time constraints, we have simplified the problem and saved ourselves time and effort to retrain the model multiple times.
-- I treated one row of data as one sample. I perhaps should have treated all rows of a unique race as one sample as we want to see which horse can win relative to its race opponents.
-- I am unable to make a prediction if the horse is new and has not raced before.
-- Try out more complicated models to see how they fare?
-
+## Reflections
+We want to reflect on key stages in our team work process:
+1. Data Handling
+-Cleaning & Feature Engineering: The team effectively cleaned the data and engineered key features, like flat_type and hdb_age, which were crucial for accurate predictions.
+-Variable Selection: Relevant variables were carefully chosen, including handling categorical data properly and exploring interactions, improving model accuracy.
+2. Model Fine-Tuning
+-Hyperparameter Tuning: The team used grid and random search techniques to optimize hyperparameters, ensuring models were finely tuned for performance.
+-Cross-Validation: Cross-validation helped prevent overfitting and ensured the models generalized well.
+-Technical Challenges: Challenges like balancing model complexity with run time and handling large datasets were tackled effectively, ensuring efficient model training.
+Summary
+The team’s strong approach to data handling, variable selection, and model fine-tuning, combined with overcoming technical challenges, led to the development of accurate and reliable models for predicting HDB resale prices.
 ---
 ## Conclusion
-Overall, we were able to get a good result from the models and backtesting. Most of the models and strategies, though simplistic, allowed us to "profit" over the course of 2,000 races. I am convinced that using one of these statistical models would give us an edge over the average punter, but of course I would have to test this out in real life to prove it!
+
+In this project, we aimed to predict HDB resale prices in Singapore by leveraging a comprehensive dataset that included various factors such as the property's location, type, size, age, and proximity to amenities. Through careful data handling, feature engineering, and model selection, we successfully identified key variables that significantly impact resale prices. By comparing advanced machine learning models—LightGBM, XGBoost, and CatBoost—we were able to fine-tune and validate our models to achieve high accuracy and reliability. The results demonstrate the effectiveness of these models in capturing the complexities of the HDB resale market, providing valuable insights for stakeholders and setting the stage for future enhancements and potential real-world applications.
