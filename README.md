@@ -42,9 +42,7 @@ The data dictionary will be provided at the bottom of this file.
 ## Executive Summary
 **INTRODUCTION**
 
-This project seeks to make predictions on the outcome of HDB resale prices through regression models. For regression models, we aim to predict the finish time of the horses, hereby predicting the winner of the race.
-
-With the prediction results, agents will be able to use different strategies to meet their client's needs. Backtesting results of each model will also show the number of bets and profit made from each strategy.
+This project seeks to make predictions on the outcome of HDB resale prices through regression models. With the prediction price, agents will be able to use different strategies to meet their client's needs. 
 
 **METHODOLOGY**
 
