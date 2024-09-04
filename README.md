@@ -65,7 +65,7 @@ The application was deployed on Streamlit and can be accessed through this [link
 
 Based on a context of structured tabular dataset, we managed to filter out the three strongest options for modeling which are Light Gradient Boosting Machine (LightGBM), CatBoost and Extreme Gradient Boosting Machine (XGBoost).
 
-We further analyzed performance of three machine learning models using metrics such as Train RMSE, Test RMSE, Train R², Test R² and Run Time (s). 
+We further analysed performance of three machine learning models using metrics such as Train RMSE, Test RMSE, Train R², Test R² and Run Time (s). 
 Here’s the analysis:
 
 1. Light Gradient Boosting Machine
@@ -104,82 +104,83 @@ XGBoost outperforms the other two models in terms of both accuracy (lowest RMSE)
 
 ## Data Dictionary
 
-1.resale_price: the property's sale price in Singapore dollars. This is the target variable that you're trying to predict for this challenge.
-2.Tranc_YearMonth: year and month of the resale transaction, e.g. 2015-02.
-3.town: HDB township where the flat is located, e.g. BUKIT MERAH.
-4.flat_type: type of the resale flat unit, e.g. 3 ROOM.
-5.block: block number of the resale flat, e.g. 454.
-6.street_name: street name where the resale flat resides, e.g. TAMPINES ST 42.
-7.storey_range: floor level (range) of the resale flat unit, e.g. 07 TO 09.
-8.floor_area_sqm: floor area of the resale flat unit in square metres.
-9.flat_model: HDB model of the resale flat, e.g. Multi Generation.
-10.lease_commence_date: commencement year of the flat unit's 99-year lease.
-11.Tranc_Year: year of resale transaction.
-12.Tranc_Month: month of resale transaction.
-13.mid_storey: median value of storey_range.
-14.lower: lower value of storey_range.
-15.upper: upper value of storey_range.
-16.mid: middle value of storey_range.
-17.full_flat_type: combination of flat_type and flat_model.
-18.address: combination of block and street_name.
-19.floor_area_sqft: floor area of the resale flat unit in square feet.
-20.hdb_age: number of years from lease_commence_date to present year.
-21.max_floor_lvl: highest floor of the resale flat.
-22.year_completed: year which construction was completed for resale flat.
-23.residential: boolean value if resale flat has residential units in the same block.
-24.commercial: boolean value if resale flat has commercial units in the same block.
-25.market_hawker: boolean value if resale flat has a market or hawker centre in the same block.
-26.multistorey_carpark: boolean value if resale flat has a multistorey carpark in the same block.
-27.precinct_pavilion: boolean value if resale flat has a pavilion in the same block.
-28.total_dwelling_units: total number of residential dwelling units in the resale flat.
-29.1room_sold: number of 1-room residential units in the resale flat.
-30.2room_sold: number of 2-room residential units in the resale flat.
-31.3room_sold: number of 3-room residential units in the resale flat.
-32.4room_sold: number of 4-room residential units in the resale flat.
-33.5room_sold: number of 5-room residential units in the resale flat.
-34.exec_sold: number of executive type residential units in the resale flat block.
-35.multigen_sold: number of multi-generational type residential units in the resale flat block.
-36.studio_apartment_sold: number of studio apartment type residential units in the resale flat block.
-37.1room_rental: number of 1-room rental residential units in the resale flat block.
-38.2room_rental: number of 2-room rental residential units in the resale flat block.
-39.3room_rental: number of 3-room rental residential units in the resale flat block.
-40.other_room_rental: number of "other" type rental residential units in the resale flat block.
-41.postal: postal code of the resale flat block.
-42.Latitude: Latitude based on postal code.
-43.Longitude: Longitude based on postal code.
-44.planning_area: Government planning area that the flat is located.
-45.Mall_Nearest_Distance: distance (in metres) to the nearest mall.
-46.Mall_Within_500m: number of malls within 500 metres.
-47.Mall_Within_1km: number of malls within 1 kilometre.
-48.Mall_Within_2km: number of malls within 2 kilometres.
-49.Hawker_Nearest_Distance: distance (in metres) to the nearest hawker centre.
-50.Hawker_Within_500m: number of hawker centres within 500 metres.
-51.Hawker_Within_1km: number of hawker centres within 1 kilometre.
-52.Hawker_Within_2km: number of hawker centres within 2 kilometres.
-53.hawker_food_stalls: number of hawker food stalls in the nearest hawker centre.
-54.hawker_market_stalls: number of hawker and market stalls in the nearest hawker centre.
-55.mrt_nearest_distance: distance (in metres) to the nearest MRT station.
-56.mrt_name: name of the nearest MRT station.
-57.bus_interchange: boolean value if the nearest MRT station is also a bus interchange.
-58.mrt_interchange: boolean value if the nearest MRT station is a train interchange station.
-59.mrt_latitude: latitude (in decimal degrees) of the nearest MRT station.
-60.mrt_longitude: longitude (in decimal degrees) of the nearest MRT station.
-61.bus_stop_nearest_distance: distance (in metres) to the nearest bus stop.
-62.bus_stop_name: name of the nearest bus stop.
-63.bus_stop_latitude: latitude (in decimal degrees) of the nearest bus stop.
-64.bus_stop_longitude: longitude (in decimal degrees) of the nearest bus stop.
-65.pri_sch_nearest_distance: distance (in metres) to the nearest primary school.
-66.pri_sch_name: name of the nearest primary school.
-67.vacancy: number of vacancies in the nearest primary school.
-68.pri_sch_affiliation: boolean value if the nearest primary school has a secondary school affiliation.
-69.pri_sch_latitude: latitude (in decimal degrees) of the nearest primary school.
-70.pri_sch_longitude: longitude (in decimal degrees) of the nearest primary school.
-71.sec_sch_nearest_dist: distance (in metres) to the nearest secondary school.
-72.sec_sch_name: name of the nearest secondary school.
-73.cutoff_point: PSLE cutoff point of the nearest secondary school.
-74.affiliation: boolean value if the nearest secondary school has a primary school affiliation.
-75.sec_sch_latitude: latitude (in decimal degrees) of the nearest secondary school.
-76.sec_sch_longitude: longitude (in decimal degrees) of the nearest secondary school.
+1. **resale_price**: the property's sale price in Singapore dollars. This is the target variable that you're trying to predict for this challenge.
+2. **Tranc_YearMonth**: year and month of the resale transaction, e.g. 2015-02.
+3. **town**: HDB township where the flat is located, e.g. BUKIT MERAH.
+4. **flat_type**: type of the resale flat unit, e.g. 3 ROOM.
+5. **block**: block number of the resale flat, e.g. 454.
+6. **street_name**: street name where the resale flat resides, e.g. TAMPINES ST 42.
+7. **storey_range**: floor level (range) of the resale flat unit, e.g. 07 TO 09.
+8. **floor_area_sqm**: floor area of the resale flat unit in square metres.
+9. **flat_model**: HDB model of the resale flat, e.g. Multi Generation.
+10. **lease_commence_date**: commencement year of the flat unit's 99-year lease.
+11. **Tranc_Year**: year of resale transaction.
+12. **Tranc_Month**: month of resale transaction.
+13. **mid_storey**: median value of storey_range.
+14. **lower**: lower value of storey_range.
+15. **upper**: upper value of storey_range.
+16. **mid**: middle value of storey_range.
+17. **full_flat_type**: combination of flat_type and flat_model.
+18. **address**: combination of block and street_name.
+19. **floor_area_sqft**: floor area of the resale flat unit in square feet.
+20. **hdb_age**: number of years from lease_commence_date to present year.
+21. **max_floor_lvl**: highest floor of the resale flat.
+22. **year_completed**: year which construction was completed for resale flat.
+23. **residential**: boolean value if resale flat has residential units in the same block.
+24. **commercial**: boolean value if resale flat has commercial units in the same block.
+25. **market_hawker**: boolean value if resale flat has a market or hawker centre in the same block.
+26. **multistorey_carpark**: boolean value if resale flat has a multistorey carpark in the same block.
+27. **precinct_pavilion**: boolean value if resale flat has a pavilion in the same block.
+28. **total_dwelling_units**: total number of residential dwelling units in the resale flat.
+29. **1room_sold**: number of 1-room residential units in the resale flat.
+30. **2room_sold**: number of 2-room residential units in the resale flat.
+31. **3room_sold**: number of 3-room residential units in the resale flat.
+32. **4room_sold**: number of 4-room residential units in the resale flat.
+33. **5room_sold**: number of 5-room residential units in the resale flat.
+34. **exec_sold**: number of executive type residential units in the resale flat block.
+35. **multigen_sold**: number of multi-generational type residential units in the resale flat block.
+36. **studio_apartment_sold**: number of studio apartment type residential units in the resale flat block.
+37. **1room_rental**: number of 1-room rental residential units in the resale flat block.
+38. **2room_rental**: number of 2-room rental residential units in the resale flat block.
+39. **3room_rental**: number of 3-room rental residential units in the resale flat block.
+40. **other_room_rental**: number of "other" type rental residential units in the resale flat block.
+41. **postal**: postal code of the resale flat block.
+42. **Latitude**: Latitude based on postal code.
+43. **Longitude**: Longitude based on postal code.
+44. **planning_area**: Government planning area that the flat is located.
+45. **Mall_Nearest_Distance**: distance (in metres) to the nearest mall.
+46. **Mall_Within_500m**: number of malls within 500 metres.
+47. **Mall_Within_1km**: number of malls within 1 kilometre.
+48. **Mall_Within_2km**: number of malls within 2 kilometres.
+49. **Hawker_Nearest_Distance**: distance (in metres) to the nearest hawker centre.
+50. **Hawker_Within_500m**: number of hawker centres within 500 metres.
+51. **Hawker_Within_1km**: number of hawker centres within 1 kilometre.
+52. **Hawker_Within_2km**: number of hawker centres within 2 kilometres.
+53. **hawker_food_stalls**: number of hawker food stalls in the nearest hawker centre.
+54. **hawker_market_stalls**: number of hawker and market stalls in the nearest hawker centre.
+55. **mrt_nearest_distance**: distance (in metres) to the nearest MRT station.
+56. **mrt_name**: name of the nearest MRT station.
+57. **bus_interchange**: boolean value if the nearest MRT station is also a bus interchange.
+58. **mrt_interchange**: boolean value if the nearest MRT station is a train interchange station.
+59. **mrt_latitude**: latitude (in decimal degrees) of the nearest MRT station.
+60. **mrt_longitude**: longitude (in decimal degrees) of the nearest MRT station.
+61. **bus_stop_nearest_distance**: distance (in metres) to the nearest bus stop.
+62. **bus_stop_name**: name of the nearest bus stop.
+63. **bus_stop_latitude**: latitude (in decimal degrees) of the nearest bus stop.
+64. **bus_stop_longitude**: longitude (in decimal degrees) of the nearest bus stop.
+65. **pri_sch_nearest_distance**: distance (in metres) to the nearest primary school.
+66. **pri_sch_name**: name of the nearest primary school.
+67. **vacancy**: number of vacancies in the nearest primary school.
+68. **pri_sch_affiliation**: boolean value if the nearest primary school has a secondary school affiliation.
+69. **pri_sch_latitude**: latitude (in decimal degrees) of the nearest primary school.
+70. **pri_sch_longitude**: longitude (in decimal degrees) of the nearest primary school.
+71. **sec_sch_nearest_dist**: distance (in metres) to the nearest secondary school.
+72. **sec_sch_name**: name of the nearest secondary school.
+73. **cutoff_point**: PSLE cutoff point of the nearest secondary school.
+74. **affiliation**: boolean value if the nearest secondary school has a primary school affiliation.
+75. **sec_sch_latitude**: latitude (in decimal degrees) of the nearest secondary school.
+76. **sec_sch_longitude**: longitude (in decimal degrees) of the nearest secondary school.
+
 
 ---
 ## Reflections
