@@ -180,6 +180,8 @@ XGBoost outperforms the other two models in terms of both accuracy (lowest RMSE)
 75. **sec_sch_latitude**: latitude (in decimal degrees) of the nearest secondary school.
 76. **sec_sch_longitude**: longitude (in decimal degrees) of the nearest secondary school.
 
+---
+## Feature Selection & Justification
 
 ---
 ## Reflections
